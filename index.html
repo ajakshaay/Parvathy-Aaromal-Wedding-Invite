@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Wedding Proclamation | Parvathy & Aaromal</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Auspicious Wedding Invitation of Parvathy & Aaromal. Framed in a traditional Kumkum-Red & Kolam-Bordered South Indian luxury design.">
+  <meta property="og:title" content="Wedding Proclamation | Parvathy & Aaromal">
+  <meta property="og:type" content="website">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <!-- Google Fonts: Cormorant Garamond (Luxury Serif), Great Vibes (Cursive Calligraphy), and Montserrat (Sans) - Optimised Weight Payload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration for Kumkum Red Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kumkum: {
+              DEFAULT: '#A62B1D',   // Deep traditional terracotta/kumkum red
+              dark: '#7A1810',     // Deep shadow kumkum
+              light: '#BE3E2F',    // Bright crimson vermillion
+            },
+            gold: {
+              DEFAULT: '#E5C158',   // Shimmering gold leaf
+              light: '#FDF2A9',
+              dark: '#B89025',
+            },
+            leafgreen: {
+              DEFAULT: '#244D36',
+              light: '#2E6930',
+            },
+            white: '#FFFFFF',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            cursive: ['Great Vibes', 'cursive'],
+            sans: ['Montserrat', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 50s linear infinite',
+            'float-slow': 'float-slow 7s ease-in-out infinite',
+            'lantern-sway': 'lantern-sway 6s ease-in-out infinite',
+            'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+            'flicker': 'flicker 1.8s ease-in-out infinite',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for Traditional Kolam & Kumkum Aesthetics -->
+  <style type="text/css">
+    /* Hardware Layer promotion for flawless mobile rendering */
+    section {
+      transform: translate3d(0, 0, 0);
+      -webkit-transform: translate3d(0, 0, 0);
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      perspective: 1000px;
+      -webkit-perspective: 1000px;
+    }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #7A1810;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #E5C158;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #FDF2A9;
+    }
+
+    /* Hand-made Kumkum Paper Grain Texture */
+    .kumkum-texture {
+      background-color: #A62B1D;
+      background-image: 
+        radial-gradient(rgba(229, 193, 88, 0.05) 1px, transparent 0),
+        radial-gradient(rgba(229, 193, 88, 0.05) 1px, transparent 0);
+      background-size: 24px 24px;
+      background-position: 0 0, 12px 12px;
+    }
+
+    /* Gold Foil Text Shimmer */
+    .gold-foil-text {
+      background: linear-gradient(to right, #B89025 0%, #FDF2A9 30%, #E5C158 50%, #FDF2A9 70%, #B89025 100%);
+      background-size: 200% auto;
+      color: transparent;
+      -webkit-background-clip: text;
+      background-clip: text;
+      animation: gold-shimmer-anim 6s linear infinite;
+    }
+    @keyframes gold-shimmer-anim {
+      0% { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+
+    /* Keyframes */
+    @keyframes float-slow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(0.6deg); }
+    }
+    @keyframes lantern-sway {
+      0%, 100% { transform: rotate(-3.5deg); transform-origin: top center; }
+      50% { transform: rotate(3.5deg); transform-origin: top center; }
+    }
+    @keyframes pulse-soft {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.02); opacity: 1; }
+    }
+    @keyframes flicker {
+      0%, 100% { transform: scale(1) translateY(0); filter: blur(0px); opacity: 0.95; }
+      50% { transform: scale(1.06) translateY(-0.8px); filter: blur(0.4px); opacity: 1; }
+    }
+
+    /* Scroll reveals */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Traditional repeated SVG Kolam Borders for edges (Default: ultra-small devices e.g. Fold at 280px) */
+    .kolam-border-left {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 4px;
+      width: 8px;
+      background-size: 8px 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='48' viewBox='0 0 24 48' fill='none'%3E%3Cpath d='M12,0 C22,10 22,20 12,30 C2,20 2,10 12,0 M12,10 C15,15 15,20 12,25 C9,20 9,15 12,10' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3Ccircle cx='12' cy='15' r='2' fill='white' fill-opacity='0.85'/%3E%3Ccircle cx='12' cy='39' r='2' fill='white' fill-opacity='0.85'/%3E%3Cpath d='M12,24 C22,34 22,44 12,48 C2,44 2,34 12,24' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3C/svg%3E");
+      background-repeat: repeat-y;
+      z-index: 45;
+      pointer-events: none;
+    }
+
+    .kolam-border-right {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 4px;
+      width: 8px;
+      background-size: 8px 16px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='48' viewBox='0 0 24 48' fill='none'%3E%3Cpath d='M12,0 C22,10 22,20 12,30 C2,20 2,10 12,0 M12,10 C15,15 15,20 12,25 C9,20 9,15 12,10' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3Ccircle cx='12' cy='15' r='2' fill='white' fill-opacity='0.85'/%3E%3Ccircle cx='12' cy='39' r='2' fill='white' fill-opacity='0.85'/%3E%3Cpath d='M12,24 C22,34 22,44 12,48 C2,44 2,34 12,24' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3C/svg%3E");
+      background-repeat: repeat-y;
+      z-index: 45;
+      pointer-events: none;
+    }
+
+    .kolam-border-top {
+      position: fixed;
+      top: 4px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background-size: 16px 8px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24' fill='none'%3E%3Cpath d='M0,12 C10,22 20,22 30,12 C20,2 10,2 0,12 M10,12 C15,15 20,15 25,12 C20,9 15,9 10,12' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3Ccircle cx='15' cy='12' r='2' fill='white' fill-opacity='0.85'/%3E%3Ccircle cx='39' cy='12' r='2' fill='white' fill-opacity='0.85'/%3E%3Cpath d='M24,12 C34,22 44,22 48,12 C44,2 34,2 24,12' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      z-index: 45;
+      pointer-events: none;
+    }
+
+    .kolam-border-bottom {
+      position: fixed;
+      bottom: 4px;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background-size: 16px 8px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='24' viewBox='0 0 48 24' fill='none'%3E%3Cpath d='M0,12 C10,22 20,22 30,12 C20,2 10,2 0,12 M10,12 C15,15 20,15 25,12 C20,9 15,9 10,12' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3Ccircle cx='15' cy='12' r='2' fill='white' fill-opacity='0.85'/%3E%3Ccircle cx='39' cy='12' r='2' fill='white' fill-opacity='0.85'/%3E%3Cpath d='M24,12 C34,22 44,22 48,12 C44,2 34,2 24,12' stroke='white' stroke-width='1.5' stroke-opacity='0.85'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      z-index: 45;
+      pointer-events: none;
+    }
+
+    /* Standard mobile devices (min-width: 360px) */
+    @media (min-width: 360px) {
+      .kolam-border-left {
+        left: 6px;
+        width: 12px;
+        background-size: 12px 24px;
+      }
+      .kolam-border-right {
+        right: 6px;
+        width: 12px;
+        background-size: 12px 24px;
+      }
+      .kolam-border-top {
+        top: 6px;
+        height: 12px;
+        background-size: 24px 12px;
+      }
+      .kolam-border-bottom {
+        bottom: 6px;
+        height: 12px;
+        background-size: 24px 12px;
+      }
+    }
+
+    /* Desktop and Tablets (min-width: 640px) */
+    @media (min-width: 640px) {
+      .kolam-border-left {
+        left: 12px;
+        width: 24px;
+        background-size: auto;
+      }
+      .kolam-border-right {
+        right: 12px;
+        width: 24px;
+        background-size: auto;
+      }
+      .kolam-border-top {
+        top: 12px;
+        height: 24px;
+        background-size: auto;
+      }
+      .kolam-border-bottom {
+        bottom: 12px;
+        height: 24px;
+        background-size: auto;
+      }
+    }
+
+    /* High Performance Parallax Layer Base with smooth inertia transitions */
+    .parallax-layer {
+      will-change: transform;
+      transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    .scale-parallax {
+      will-change: transform;
+      transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+  </style>
+</head>
+<body class="kumkum-texture text-white overflow-x-hidden antialiased">
+
+  <!-- GILDED PRELOADER ELEMENT -->
+  <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-kumkum-dark transition-all duration-700 pointer-events-auto">
+    <!-- Starry background pattern inside preloader to maintain premium context -->
+    <div class="absolute inset-0 bg-[radial-gradient(#E5C158_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-10 pointer-events-none"></div>
+    <div class="relative flex flex-col items-center z-10 scale-90 sm:scale-100">
+      <!-- Spinning Golden Mandala -->
+      <div class="relative w-24 h-24 sm:w-32 sm:h-32 mb-6">
+        <svg class="w-full h-full text-gold animate-spin-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.75">
+          <circle cx="50" cy="50" r="45" stroke-dasharray="2 2"/>
+          <circle cx="50" cy="50" r="35"/>
+          <circle cx="50" cy="50" r="20" stroke-dasharray="1 1"/>
+          <g stroke-linecap="round">
+            <!-- Mandala lines -->
+            <path d="M50 15 L50 85" stroke="#E5C158" opacity="0.6"/>
+            <path d="M15 50 L85 50" stroke="#E5C158" opacity="0.6"/>
+            <path d="M25 25 L75 75" stroke="#E5C158" opacity="0.6"/>
+            <path d="M25 75 L75 25" stroke="#E5C158" opacity="0.6"/>
+            <circle cx="50" cy="15" r="1.5" fill="#E5C158" />
+            <circle cx="50" cy="85" r="1.5" fill="#E5C158" />
+            <circle cx="15" cy="50" r="1.5" fill="#E5C158" />
+            <circle cx="85" cy="50" r="1.5" fill="#E5C158" />
+            <circle cx="25" cy="25" r="1.5" fill="#E5C158" />
+            <circle cx="75" cy="75" r="1.5" fill="#E5C158" />
+            <circle cx="25" cy="75" r="1.5" fill="#E5C158" />
+            <circle cx="75" cy="25" r="1.5" fill="#E5C158" />
+          </g>
+        </svg>
+        <!-- Flickering Diya in the center of loading mandala -->
+        <div class="absolute inset-0 flex items-center justify-center mt-1">
+          <div class="relative flex flex-col items-center scale-75">
+            <svg class="w-10 h-8 text-gold fill-current" viewBox="0 0 60 45">
+              <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
+            </svg>
+            <div class="absolute -top-3 w-2.5 h-5 animate-pulse">
+              <path d="M5 0 C5 7, 0 8, 0 13 C0 16, 10 16, 10 13 C10 8, 5 7, 5 0 Z" fill="#FFA500"/>
+              <path d="M5 3 C5 7, 3 8, 3 11 C3 13, 7 13, 7 11 C7 8, 5 7, 5 3 Z" fill="#FDF2A9"/>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Loading Text -->
+      <span class="font-sans text-[10px] sm:text-xs tracking-[0.4em] uppercase text-gold font-bold mb-1 animate-pulse">Auspicious Proclamation</span>
+      <span class="font-serif italic text-lg sm:text-xl text-gold-light/90">Loading Invitation...</span>
+    </div>
+  </div>
+
+  <!-- Side and Top/Bottom Traditional White Kolam borders enclosing the page -->
+  <div class="kolam-border-left"></div>
+  <div class="kolam-border-right"></div>
+  <div class="kolam-border-top"></div>
+  <div class="kolam-border-bottom"></div>
+
+  <!-- Canvas for Jasmine Blossoms & Twinkling Gold Sparks -->
+  <canvas id="jasmine-canvas" class="fixed inset-0 pointer-events-none z-40"></canvas>
+
+  <!-- FLOATING NAVIGATION HEADER -->
+  <header class="fixed top-6 sm:top-12 left-1/2 -translate-x-1/2 z-[60] w-auto max-w-[95%] select-none pointer-events-auto">
+    <nav class="flex items-center justify-center gap-1.5 min-360:gap-2 min-[375px]:gap-3 sm:gap-6 px-3.5 py-1.5 sm:px-6 sm:py-2.5 rounded-full border border-gold/30 bg-kumkum-dark/75 backdrop-blur-md shadow-2xl">
+      <a href="#hero" class="font-sans text-[8px] min-[375px]:text-[10px] sm:text-xs uppercase tracking-widest text-gold-light hover:text-white font-bold transition-all duration-300">Home</a>
+      <span class="h-3 w-[1px] bg-gold/20"></span>
+      <a href="#mid-portrait" class="font-sans text-[8px] min-[375px]:text-[10px] sm:text-xs uppercase tracking-widest text-gold-light hover:text-white font-bold transition-all duration-300">Blessings</a>
+      <span class="h-3 w-[1px] bg-gold/20"></span>
+      <a href="#details" class="font-sans text-[8px] min-[375px]:text-[10px] sm:text-xs uppercase tracking-widest text-gold-light hover:text-white font-bold transition-all duration-300">Venue</a>
+      <span class="h-3 w-[1px] bg-gold/20"></span>
+      <a href="#feast" class="font-sans text-[8px] min-[375px]:text-[10px] sm:text-xs uppercase tracking-widest text-gold-light hover:text-white font-bold transition-all duration-300">Feast</a>
+    </nav>
+  </header>
+
+  <!-- ==================== 1. HERO SECTION ==================== -->
+  <section id="hero" class="relative min-h-screen flex flex-col justify-between items-center py-20 px-4 sm:px-8 overflow-hidden">
+    
+    <!-- Rotating Mandala Watermark (Background Parallax Layer) -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.06] z-0 overflow-hidden parallax-layer" data-speed="-0.3">
+      <svg class="w-[450px] h-[450px] min-[375px]:w-[550px] min-[375px]:h-[550px] md:w-[850px] md:h-[850px] text-gold animate-spin-slow" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.25">
+        <circle cx="50" cy="50" r="48" stroke-dasharray="1 1"/>
+        <circle cx="50" cy="50" r="40"/>
+        <circle cx="50" cy="50" r="30" stroke-dasharray="2 1"/>
+        <circle cx="50" cy="50" r="20"/>
+        <circle cx="50" cy="50" r="10" stroke-dasharray="1 2"/>
+        <g stroke-linecap="round">
+          <script>
+            for (let angle = 0; angle < 360; angle += 15) {
+              const rad = angle * Math.PI / 180;
+              const cos = Math.cos(rad);
+              const sin = Math.sin(rad);
+              document.write(`
+                <path d="M50 50 C${50 + 18 * cos} ${50 + 18 * sin}, ${50 + 36 * Math.cos((angle + 30) * Math.PI / 180)} ${50 + 36 * Math.sin((angle + 30) * Math.PI / 180)}, 50 50" />
+                <circle cx="${50 + 40 * cos}" cy="${50 + 40 * sin}" r="1.2" fill="#E5C158" />
+                <line x1="50" y1="50" x2="${50 + 48 * cos}" y2="${50 + 48 * sin}" opacity="0.3"/>
+              `);
+            }
+          </script>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Top Hanging Garland String -->
+    <div class="absolute top-8 left-6 right-6 h-10 pointer-events-none z-20 flex justify-between select-none opacity-90 parallax-layer" data-speed="0.12">
+      <script>
+        const garlandsCount = window.innerWidth < 640 ? 6 : 12;
+        for (let i = 0; i < garlandsCount; i++) {
+          document.write(`
+            <svg class="w-8 h-8 text-gold animate-[sway-left_5.5s_ease-in-out_infinite]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 40 40" style="animation-delay: ${i * 0.4}s">
+              <path d="M20 0 L20 25" stroke="#E5C158"/>
+              <ellipse cx="20" cy="27" rx="5" ry="6" fill="#E5C158"/>
+              <circle cx="20" cy="34" r="2.5" fill="white"/>
+            </svg>
+          `);
+        }
+      </script>
+    </div>
+
+    <!-- Sacred Header -->
+    <div class="w-full max-w-4xl mx-auto text-center z-10 flex flex-col items-center mt-16 parallax-layer" data-speed="-0.08">
+      
+      <!-- Welcome quote -->
+      <p class="font-serif italic text-lg min-[375px]:text-xl md:text-3.5xl lg:text-4.5xl text-white/95 leading-relaxed max-w-3xl mx-auto mb-10 min-[375px]:mb-16 font-light px-4">
+        "Together with our families, we invite you to share in our joy as we begin our forever."
+      </p>
+      
+      <!-- Symmetrical Pink Lotuses framing the title -->
+      <div class="flex items-center gap-3 sm:gap-6 justify-center mb-6">
+        <!-- Left Lotus SVG -->
+        <svg viewBox="0 0 40 24" class="w-8 h-6 sm:w-12 sm:h-8 text-white" fill="currentColor">
+          <path d="M20 24 C14 20, 4 20, 0 16 C3 14, 10 16, 12 18 C15 15, 18 10, 20 5 C22 10, 25 15, 28 18 C30 16, 37 14, 40 16 C36 20, 26 20, 20 24 Z" fill="#F4A3B6" stroke="white" stroke-width="1"/>
+        </svg>
+        <span class="font-sans text-[9px] sm:text-xs md:text-sm lg:text-base tracking-[0.25em] sm:tracking-[0.35em] font-bold text-gold-light uppercase block">
+          Two Hearts, One Beautiful Journey
+        </span>
+        <!-- Right Lotus SVG -->
+        <svg viewBox="0 0 40 24" class="w-8 h-6 sm:w-12 sm:h-8 text-white" fill="currentColor">
+          <path d="M20 24 C14 20, 4 20, 0 16 C3 14, 10 16, 12 18 C15 15, 18 10, 20 5 C22 10, 25 15, 28 18 C30 16, 37 14, 40 16 C36 20, 26 20, 20 24 Z" fill="#F4A3B6" stroke="white" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <!-- HUGE BOLD COUPLE NAMES -->
+      <h1 class="font-serif py-4 mb-4 flex flex-col md:flex-row items-center justify-center gap-1.5 md:gap-8 select-none">
+        <span class="font-serif text-4xl min-[375px]:text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold tracking-wide gold-foil-text drop-shadow-lg">
+          Parvathy
+        </span>
+        <span class="font-cursive text-4xl min-[375px]:text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-gold-light font-normal my-1 md:my-0">&amp;</span>
+        <span class="font-serif text-4xl min-[375px]:text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-semibold tracking-wide gold-foil-text drop-shadow-lg">
+          Aaromal
+        </span>
+      </h1>
+
+      <p class="font-serif italic text-2xl md:text-4xl text-white/90 mb-10 select-none">
+        are getting married!
+      </p>
+
+      <!-- Emphasized Date Block -->
+      <div class="inline-block border-2 border-dashed border-gold/50 px-6 py-5 sm:px-8 sm:py-6 md:px-12 md:py-8 rounded-3xl bg-kumkum-dark/30 shadow-2xl backdrop-blur-sm w-full max-w-[250px] min-[375px]:max-w-[280px] sm:max-w-md md:max-w-lg mx-auto mb-10 select-none parallax-layer" data-speed="0.1">
+        <span class="font-sans text-[9px] tracking-[0.3em] uppercase text-gold font-bold mb-2 block">Auspicious Wedding Date</span>
+        <p class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-gold-light tracking-wide font-semibold">
+          Sunday
+        </p>
+        <p class="font-serif text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white tracking-widest uppercase font-medium mt-1">
+          July 5, 2026
+        </p>
+      </div>
+
+      <!-- Scroll indicator CTA -->
+      <a href="#details" class="group relative px-10 py-3.5 sm:px-12 sm:py-4.5 rounded-full overflow-hidden border border-gold bg-kumkum-dark text-white hover:text-kumkum font-sans font-bold text-xs sm:text-sm uppercase tracking-widest shadow-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-95 z-20 parallax-layer" data-speed="0.05">
+        <span class="absolute inset-[1.5px] bg-kumkum-dark rounded-full group-hover:bg-white transition-all duration-300 z-0"></span>
+        <span class="relative z-10 flex items-center gap-2">
+          View Auspicious details
+          <i data-lucide="chevron-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300"></i>
+        </span>
+      </a>
+    </div>
+
+    <!-- Page indicator -->
+    <div class="flex flex-col items-center justify-center mt-6 select-none opacity-80 z-10">
+      <span class="text-[9px] font-sans tracking-[0.4em] uppercase text-gold mb-2">Scroll to Proclaim</span>
+      <div class="w-6 h-10 border-2 border-gold/40 rounded-full flex justify-center p-1">
+        <div class="w-1.5 h-3 bg-gold rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ==================== 2. COUPLE PORTRAIT MID SECTION ==================== -->
+  <section id="mid-portrait" class="pt-6 pb-20 sm:pt-10 sm:pb-24 px-4 sm:px-8 relative flex flex-col items-center justify-center border-b border-gold/20">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-light/10 blur-[100px] sm:blur-[130px] pointer-events-none z-0 parallax-layer" data-speed="-0.22"></div>
+
+    <div class="w-full max-w-4xl mx-auto text-center px-2 z-10 reveal">
+      
+      <!-- Top Feet Motif Line art (Kerala Traditional wedding feet reference) -->
+      <div class="mb-8 sm:mb-10 flex justify-center select-none opacity-90 animate-float-slow">
+        <svg viewBox="0 0 160 100" class="w-32 h-24 sm:w-40 sm:h-28 text-white" fill="none" stroke="currentColor" stroke-width="1.5">
+          <!-- Bride's Feet Left with anklet loops -->
+          <path d="M35 70 C35 55, 45 45, 55 42 L65 72" stroke="white" stroke-width="2"/>
+          <path d="M38 68 Q48 64, 58 66" stroke="#E5C158" stroke-width="3"/> <!-- Golden anklet -->
+          <!-- Groom's Feet Right with traditional Kasavu border lines -->
+          <path d="M125 70 C125 55, 115 45, 105 42 L95 72" stroke="white" stroke-width="2"/>
+          <path d="M122 68 Q112 64, 102 66" stroke="#E5C158" stroke-width="2"/>
+          <!-- Auspicious Mandap ground line -->
+          <line x1="10" y1="75" x2="150" y2="75" stroke="white" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <!-- Pink Lotus watermarks on sides -->
+          <circle cx="20" cy="30" r="4" fill="#F4A3B6"/>
+          <circle cx="140" cy="30" r="4" fill="#F4A3B6"/>
+        </svg>
+      </div>
+
+      <!-- COUPLE PORTRAIT AT MID PORTION (RESPONSIVE OPTIMIZED SIZING) -->
+      <div class="relative w-[270px] h-[400px] min-[375px]:w-[300px] min-[375px]:h-[450px] sm:w-[350px] sm:h-[525px] md:w-[400px] md:h-[580px] lg:w-[460px] lg:h-[660px] max-w-full mx-auto rounded-[130px_130px_0_0] min-[375px]:rounded-[150px_150px_0_0] md:rounded-[200px_200px_0_0] overflow-hidden border-4 border-gold shadow-paper-cut-deep bg-kumkum-dark p-2 parallax-layer" data-speed="0.04">
+        <!-- Inner gold liner border frame -->
+        <div class="absolute inset-2 border-2 border-gold/45 pointer-events-none rounded-[122px_122px_0_0] min-[375px]:rounded-[142px_142px_0_0] md:rounded-[192px_192px_0_0] z-20"></div>
+        <!-- Actual portrait image with prioritised loading attributes -->
+        <img src="couple.jpg" alt="Parvathy and Aaromal Portrait" class="absolute inset-0 w-full h-full object-cover rounded-[118px_118px_0_0] min-[375px]:rounded-[138px_138px_0_0] md:rounded-[188px_188px_0_0] scale-parallax parallax-layer" data-speed="-0.08" data-base-scale="1.1" fetchpriority="high" loading="eager" decoding="async">
+      </div>
+
+      <p class="font-serif italic text-lg md:text-2xl text-white/95 leading-relaxed font-light max-w-xl mx-auto mt-10 sm:mt-12 px-4">
+        "We request the pleasure of your company and blessings as we exchange our vows and step into a lifetime of love and togetherness."
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ==================== 3. EVENT DETAILS MUHURTHAM SECTION ==================== -->
+  <section id="details" class="py-20 sm:py-24 px-4 sm:px-8 bg-kumkum-dark text-white relative overflow-hidden border-y-[6px] border-gold">
+    <!-- Starry pattern overlay -->
+    <div class="absolute inset-0 bg-[radial-gradient(#E5C158_1.2px,transparent_1.2px)] [background-size:32px_32px] opacity-10 pointer-events-none"></div>
+
+    <div class="w-full max-w-5xl mx-auto z-10 relative">
+      
+      <!-- Header -->
+      <div class="text-center mb-12 sm:mb-16 reveal">
+        <span class="font-sans text-[10px] tracking-[0.4em] uppercase text-gold mb-2 block font-semibold">The Auspicious Vows</span>
+        <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-normal gold-foil-text mb-4">Muhurtham & Venue</h2>
+        <div class="flex items-center justify-center gap-3">
+          <span class="h-[1px] w-16 bg-gold/50"></span>
+          <i data-lucide="crown" class="w-6 h-6 text-gold"></i>
+          <span class="h-[1px] w-16 bg-gold/50"></span>
+        </div>
+      </div>
+
+      <!-- Detail Card Blocks -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 max-w-4xl mx-auto">
+        
+        <!-- BLOCK 1: WHEN -->
+        <div class="bg-kumkum border border-gold/40 p-6 min-[375px]:p-8 sm:p-10 rounded-[30px] sm:rounded-[35px] flex flex-col justify-between shadow-2xl relative overflow-hidden transition-all duration-300 hover:border-gold reveal parallax-layer" data-speed="-0.03">
+          <!-- Zari corner accents -->
+          <div class="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/30"></div>
+          <div class="absolute top-3 right-3 w-8 h-8 border-t border-r border-gold/30"></div>
+          <div class="absolute bottom-3 left-3 w-8 h-8 border-b border-l border-gold/30"></div>
+          <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/30"></div>
+          
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-6 sm:mb-8 mx-auto">
+              <i data-lucide="calendar" class="w-5 h-5 sm:w-6 sm:h-6 text-gold"></i>
+            </div>
+            
+            <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gold text-center tracking-wide">Auspicious Muhurtham</h3>
+            
+            <p class="font-serif text-3xl sm:text-4xl font-extrabold text-white text-center mb-1 sm:mb-2">Sunday</p>
+            <p class="font-serif text-xl sm:text-2xl text-gold-light/95 text-center mb-4 sm:mb-6">July 5, 2026</p>
+            
+            <div class="w-full text-center">
+              <div class="inline-block bg-gold/15 text-gold border border-gold/30 rounded-full px-5 py-1.5 text-[10px] sm:text-xs font-sans uppercase tracking-widest mb-6 sm:mb-8 font-semibold">
+                Wedding Vows
+              </div>
+            </div>
+            
+            <p class="font-sans text-base sm:text-lg text-white/90 flex items-center justify-center gap-2">
+              <i data-lucide="clock" class="w-5 h-5 text-gold"></i>
+              12:00 PM – 12:30 PM
+            </p>
+          </div>
+
+          <!-- Live Countdown Timer -->
+          <div class="mt-8 pt-6 sm:mt-10 sm:pt-8 border-t border-gold/20">
+            <span class="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] font-sans text-gold-light/60 block mb-3 text-center font-bold">Muhurtham Countdown</span>
+            <div id="countdown" class="grid grid-cols-4 gap-2 sm:gap-3 text-center text-white">
+              <div class="bg-kumkum-dark rounded-xl px-1 py-2.5 sm:px-2 sm:py-3.5 border border-gold/10 shadow-lg">
+                <span id="days" class="font-serif text-lg sm:text-xl font-bold text-gold-light">00</span>
+                <span class="text-[8px] font-sans block text-gold/60 uppercase tracking-widest mt-1">Days</span>
+              </div>
+              <div class="bg-kumkum-dark rounded-xl px-1 py-2.5 sm:px-2 sm:py-3.5 border border-gold/10 shadow-lg">
+                <span id="hours" class="font-serif text-lg sm:text-xl font-bold text-gold-light">00</span>
+                <span class="text-[8px] font-sans block text-gold/60 uppercase tracking-widest mt-1">Hrs</span>
+              </div>
+              <div class="bg-kumkum-dark rounded-xl px-1 py-2.5 sm:px-2 sm:py-3.5 border border-gold/10 shadow-lg">
+                <span id="minutes" class="font-serif text-lg sm:text-xl font-bold text-gold-light">00</span>
+                <span class="text-[8px] font-sans block text-gold/60 uppercase tracking-widest mt-1">Mins</span>
+              </div>
+              <div class="bg-kumkum-dark rounded-xl px-1 py-2.5 sm:px-2 sm:py-3.5 border border-gold/10 shadow-lg">
+                <span id="seconds" class="font-serif text-lg sm:text-xl font-bold text-gold-light">00</span>
+                <span class="text-[8px] font-sans block text-gold/60 uppercase tracking-widest mt-1">Secs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 2: WHERE -->
+        <div class="bg-kumkum border border-gold/40 p-6 min-[375px]:p-8 sm:p-10 rounded-[30px] sm:rounded-[35px] flex flex-col justify-between shadow-2xl relative overflow-hidden transition-all duration-300 hover:border-gold reveal parallax-layer" data-speed="0.03">
+          <div class="absolute top-3 left-3 w-8 h-8 border-t border-l border-gold/30"></div>
+          <div class="absolute top-3 right-3 w-8 h-8 border-t border-r border-gold/30"></div>
+          <div class="absolute bottom-3 left-3 w-8 h-8 border-b border-l border-gold/30"></div>
+          <div class="absolute bottom-3 right-3 w-8 h-8 border-b border-r border-gold/30"></div>
+
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-6 sm:mb-8 mx-auto">
+              <i data-lucide="map-pin" class="w-5 h-5 sm:w-6 sm:h-6 text-gold"></i>
+            </div>
+            
+            <h3 class="font-serif text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gold text-center tracking-wide">The Venue</h3>
+            
+            <p class="font-serif text-3xl sm:text-4xl font-extrabold text-white text-center mb-3">Convention Centre</p>
+            <p class="font-sans text-sm sm:text-base text-white/90 text-center leading-relaxed mb-6">
+              Irfan Convention Centre,<br>
+              Kallambalam, Trivandrum,<br>
+              Kerala - 695605
+            </p>
+            
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-white/80 text-[10px] sm:text-xs font-sans border-t border-gold/15 pt-6">
+              <span class="flex items-center gap-1.5 font-medium text-gold">
+                <i data-lucide="car" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> Valet Parking
+              </span>
+              <span class="w-1 h-1 bg-gold/30 rounded-full"></span>
+              <span class="flex items-center gap-1.5 font-medium text-gold">
+                <i data-lucide="wind" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i> Air Conditioned
+              </span>
+            </div>
+          </div>
+
+          <!-- Open maps button -->
+          <div class="mt-8 pt-6 sm:mt-10 sm:pt-6 text-center">
+            <a href="https://maps.google.com/?q=Irfan+Convention+Centre+Kallambalam+Trivandrum" target="_blank" rel="noopener noreferrer" class="group relative inline-flex px-6 py-2.5 sm:px-8 sm:py-3 rounded-full overflow-hidden border border-gold bg-kumkum-dark text-white hover:text-kumkum font-sans font-bold text-[10px] sm:text-xs uppercase tracking-widest shadow-xl transition-all duration-300 z-10">
+              <span class="absolute inset-[1.5px] bg-kumkum-dark rounded-full group-hover:bg-white transition-all duration-300 z-0"></span>
+              <span class="relative z-10 flex items-center gap-2">
+                Open Location Map
+                <i data-lucide="external-link" class="w-3.5 h-3.5 sm:w-4 sm:h-4"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 4. BANQUET / GRAND SADHYA FEAST ==================== -->
+  <section id="feast" class="py-24 sm:py-28 px-4 sm:px-8 relative overflow-hidden">
+    <div class="w-full max-w-4xl mx-auto z-10 relative reveal">
+      
+      <!-- Section Header -->
+      <div class="text-center mb-12 sm:mb-16">
+        <span class="font-sans text-xs tracking-[0.3em] uppercase text-gold font-bold mb-2 block">Festive Proclamation</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white mb-4">The Grand Sadhya</h2>
+        <div class="flex items-center justify-center gap-3">
+          <span class="h-[1px] w-16 bg-gold/50"></span>
+          <i data-lucide="utensils" class="w-6 h-6 text-gold"></i>
+          <span class="h-[1px] w-16 bg-gold/50"></span>
+        </div>
+      </div>
+
+      <!-- Banquet banana leaf illustration container -->
+      <div class="border-[2px] border-gold/40 bg-kumkum-dark p-6 min-[375px]:p-8 md:p-16 rounded-[35px] sm:rounded-[45px] shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center gap-8 sm:gap-16 max-w-3xl mx-auto">
+        <!-- Zari frame inside -->
+        <div class="absolute inset-3 border border-gold/15 rounded-[27px] sm:rounded-[37px] pointer-events-none"></div>
+
+        <!-- High-fidelity South Indian Sadhya Feast Image -->
+        <div class="w-full max-w-[280px] min-[375px]:max-w-[340px] sm:max-w-[380px] flex-shrink-0 parallax-layer" data-speed="-0.08">
+          <img src="sadya.webp" alt="Grand Sadhya Feast on Banana Leaf" class="w-full h-auto object-contain mx-auto filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.45)] hover:scale-105 transition-transform duration-500 rounded-[20px] border border-gold/25" loading="lazy" />
+        </div>
+
+        <!-- Feast invitation description -->
+        <div class="text-center lg:text-left flex-1 parallax-layer" data-speed="0.06">
+          <h3 class="font-serif text-2xl sm:text-3xl font-extrabold text-gold mb-4">A Banquet of Joy</h3>
+          
+          <p class="font-serif text-lg sm:text-xl text-white/95 leading-relaxed mb-6 sm:mb-8 font-light">
+            "Join us for love, laughter, and a grand feast to follow!"
+          </p>
+          
+          <p class="font-sans text-[10px] sm:text-xs text-gold-light uppercase tracking-[0.2em] leading-relaxed mb-6 sm:mb-8 font-semibold">
+            An imperial spread of traditional South Indian delicacies and the legendary Kerala Sadhya served with traditional hospitality.
+          </p>
+
+          <!-- Royal garlands string -->
+          <div class="flex justify-center lg:justify-start gap-1.5 opacity-85">
+            <span class="w-3.5 h-3.5 rounded-full bg-white border border-gold"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-white border border-gold"></span>
+            <span class="w-4 h-4 rounded-full bg-gold border border-kumkum"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-white border border-gold"></span>
+            <span class="w-3.5 h-3.5 rounded-full bg-white border border-gold"></span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== 5. AUSPICIOUS FINAL BLESSING ==================== -->
+  <section id="final-blessing" class="py-24 sm:py-32 px-4 sm:px-8 bg-kumkum-dark text-white text-center relative overflow-hidden border-t-[8px] border-gold">
+    <!-- Starry background gradient -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(229,193,88,0.25),transparent_75%)] opacity-80"></div>
+    
+    <div class="w-full max-w-3xl mx-auto z-10 relative reveal">
+      
+      <!-- Sparkles Crown -->
+      <div class="mb-8 flex justify-center text-gold animate-float-slow">
+        <i data-lucide="sparkles" class="w-8 h-8 sm:w-10 sm:h-10 fill-current animate-pulse"></i>
+      </div>
+
+      <!-- Vows quote -->
+      <p class="font-serif text-xl sm:text-2xl md:text-3xl italic text-white/95 font-light leading-relaxed max-w-xl mx-auto mb-10 sm:mb-14">
+        "Your presence and blessings will make our day truly special."
+      </p>
+
+      <!-- Signature Names -->
+      <h3 class="font-cursive text-5xl sm:text-6xl text-gold-light tracking-widest mb-12 sm:mb-16 select-none animate-pulse-soft">
+        Parvathy & Aaromal
+      </h3>
+
+      <!-- Flickering Royal Oil Lamps (CSS + SVG) -->
+      <div class="flex justify-center items-end gap-6 sm:gap-14 mb-12 sm:mb-16">
+        <!-- Diya 1 -->
+        <div class="relative flex flex-col items-center parallax-layer" data-speed="-0.04">
+          <svg class="w-14 h-11 sm:w-18 sm:h-14 text-gold fill-current" viewBox="0 0 60 45">
+            <!-- Stand bowl -->
+            <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
+            <path d="M20 30 L40 30 L36 40 L24 40 Z" opacity="0.9" />
+          </svg>
+          <!-- Flickering Flame -->
+          <div class="absolute -top-3 sm:-top-4 w-3.5 h-7 sm:w-4 sm:h-8 animate-pulse pointer-events-none">
+            <path d="M8 0 C8 11, 0 13, 0 20 C0 24, 16 24, 16 20 C16 13, 8 11, 8 0 Z" fill="#FFA500" class="animate-pulse"/>
+            <path d="M8 5 C8 11, 4 12, 4 17 C4 20, 12 20, 12 17 C12 12, 8 11, 8 5 Z" fill="#FDF2A9"/>
+          </div>
+        </div>
+        
+        <!-- Center Large Diya -->
+        <div class="relative flex flex-col items-center scale-110 sm:scale-150 transform parallax-layer" data-speed="0.05">
+          <svg class="w-14 h-11 sm:w-18 sm:h-14 text-gold fill-current" viewBox="0 0 60 45">
+            <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
+            <path d="M20 30 L40 30 L36 40 L24 40 Z" opacity="0.9" />
+          </svg>
+          <div class="absolute -top-3 sm:-top-4 w-3.5 h-7 sm:w-4 sm:h-8 animate-pulse pointer-events-none">
+            <path d="M8 0 C8 11, 0 13, 0 20 C0 24, 16 24, 16 20 C16 13, 8 11, 8 0 Z" fill="#FFA500" class="animate-pulse"/>
+            <path d="M8 5 C8 11, 4 12, 4 17 C4 20, 12 20, 12 17 C12 12, 8 11, 8 5 Z" fill="#FDF2A9"/>
+          </div>
+        </div>
+
+        <!-- Diya 3 -->
+        <div class="relative flex flex-col items-center parallax-layer" data-speed="-0.04">
+          <svg class="w-14 h-11 sm:w-18 sm:h-14 text-gold fill-current" viewBox="0 0 60 45">
+            <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
+            <path d="M20 30 L40 30 L36 40 L24 40 Z" opacity="0.9" />
+          </svg>
+          <div class="absolute -top-3 sm:-top-4 w-3.5 h-7 sm:w-4 sm:h-8 animate-pulse pointer-events-none">
+            <path d="M8 0 C8 11, 0 13, 0 20 C0 24, 16 24, 16 20 C16 13, 8 11, 8 0 Z" fill="#FFA500" class="animate-pulse"/>
+            <path d="M8 5 C8 11, 4 12, 4 17 C4 20, 12 20, 12 17 C12 12, 8 11, 8 5 Z" fill="#FDF2A9"/>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom footer branding -->
+      <div class="border-t border-gold/15 pt-8 mt-12 sm:mt-16 text-[9px] uppercase font-sans tracking-[0.35em] text-gold/40 px-4">
+        &copy; 2026 Parvathy & Aaromal. Proclaimed with Love.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SYSTEM SCRIPTS ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // ==================== B. FLUID CANVAS (JASMINE BLOSSOMS & GOLD FIREFLIES) ====================
+    const canvas = document.getElementById('jasmine-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    // Particle Base Class
+    class Particle {
+      constructor() {
+        this.reset();
+        this.y = Math.random() * height; // Spreads them evenly on start load
+      }
+
+      reset() {
+        this.x = Math.random() * width;
+        this.y = -20;
+        
+        // 65% Gold Sparks, 35% White Jasmine Blossoms
+        this.type = Math.random() > 0.35 ? 'firefly' : 'jasmine';
+        
+        if (this.type === 'firefly') {
+          this.size = Math.random() * 2 + 1;
+          this.speedY = Math.random() * 0.4 + 0.3; // Slow drifting float
+          this.speedX = Math.random() * 0.6 - 0.3;
+          this.opacity = Math.random() * 0.7 + 0.3;
+          this.pulseSpeed = Math.random() * 0.05 + 0.02;
+          this.pulseStep = Math.random() * 100;
+        } else {
+          this.size = Math.random() * 6 + 4;
+          this.speedY = Math.random() * 1.2 + 0.6;
+          this.speedX = Math.random() * 0.8 - 0.4;
+          this.angle = Math.random() * 360;
+          this.spinSpeed = Math.random() * 1.6 - 0.8;
+          this.swingAmplitude = Math.random() * 1.2 + 0.4;
+          this.swingSpeed = Math.random() * 0.02 + 0.01;
+          this.swingStep = Math.random() * 100;
+        }
+      }
+
+      update() {
+        if (this.type === 'firefly') {
+          this.y += this.speedY;
+          this.x += this.speedX;
+          this.pulseStep += this.pulseSpeed;
+          this.opacity = Math.abs(Math.sin(this.pulseStep)) * 0.7 + 0.3;
+        } else {
+          this.y += this.speedY;
+          this.swingStep += this.swingSpeed;
+          this.x += this.speedX + Math.sin(this.swingStep) * this.swingAmplitude;
+          this.angle += this.spinSpeed;
+        }
+
+        if (this.y > height + 20 || this.x < -20 || this.x > width + 20) {
+          this.reset();
+        }
+      }
+
+      draw() {
+        ctx.save();
+        
+        if (this.type === 'firefly') {
+          // GOLD FIREFLY LIGHTS
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(229, 193, 88, ${this.opacity})`;
+          
+          // Advanced Performance Optimization: disable shadowBlur on mobile devices (screens < 640px)
+          if (width >= 640) {
+            ctx.shadowBlur = 6;
+            ctx.shadowColor = '#E5C158';
+          }
+          
+          ctx.fill();
+        } else {
+          // WHITE JASMINE BLOSSOM
+          ctx.translate(this.x, this.y);
+          ctx.rotate(this.angle * Math.PI / 180);
+          const scaleX = Math.sin(this.swingStep);
+          ctx.scale(scaleX, 1);
+          
+          ctx.beginPath();
+          ctx.moveTo(0, -this.size);
+          ctx.bezierCurveTo(this.size/2, -this.size/2, this.size/2, this.size/2, 0, this.size);
+          ctx.bezierCurveTo(-this.size/2, this.size/2, -this.size/2, -this.size/2, 0, -this.size);
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+          ctx.fill();
+
+          ctx.beginPath();
+          ctx.arc(0, this.size - 2, 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = '#E5C158';
+          ctx.fill();
+        }
+
+        ctx.restore();
+      }
+    }
+
+    // Initialize particle pool (Optimized count for performance)
+    const particlePool = [];
+    const maxParticles = Math.min(60, Math.floor(width / 20));
+    for (let i = 0; i < maxParticles; i++) {
+      particlePool.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      particlePool.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+
+
+    // ==================== C. SCROLL REVEALS ====================
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: "0px 0px -20px 0px"
+    });
+
+    reveals.forEach(reveal => observer.observe(reveal));
+
+
+    // ==================== D. MUHURTHAM COUNTDOWN CALCULATOR ====================
+    const targetDate = new Date('July 5, 2026 12:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        document.getElementById('countdown').innerHTML = `<p class="font-serif text-lg font-bold text-gold-light col-span-4">The Auspicious Muhurtham Has Arrived! 💍👑</p>`;
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = String(days).padStart(2, '0');
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown, 1000);
+
+
+    // ==================== E. CINEMATIC 3D PARALLAX SYSTEM WITH LAZY VIEWPORT CULLING ====================
+    let scrollY = window.scrollY;
+    let ticking = false;
+
+    function updateParallax() {
+      const layers = document.querySelectorAll('.parallax-layer');
+      const viewportHeight = window.innerHeight;
+      const isMobile = window.innerWidth < 768;
+
+      layers.forEach(layer => {
+        let speed = parseFloat(layer.getAttribute('data-speed')) || 0;
+        
+        // Disable parallax translations for content cards on mobile viewports to prevent vertical overlap/collisions
+        if (isMobile && (layer.closest('#details') || layer.closest('#feast') || layer.closest('#final-blessing'))) {
+          speed = 0;
+        }
+        
+        // Find parent section or container position
+        const parentSection = layer.closest('section') || document.body;
+        const rect = parentSection.getBoundingClientRect();
+        
+        // Performance Optimization: Only perform DOM translations if parent section is visible in viewport
+        if (rect.bottom > 0 && rect.top < viewportHeight) {
+          const sectionScrollTop = scrollY + rect.top;
+          const screenMiddle = scrollY + (viewportHeight / 2);
+          const sectionMiddle = sectionScrollTop + (rect.height / 2);
+          const scrollDelta = screenMiddle - sectionMiddle;
+          const yOffset = scrollDelta * speed;
+          
+          if (layer.classList.contains('scale-parallax')) {
+            const baseScale = parseFloat(layer.getAttribute('data-base-scale')) || 1;
+            const progress = Math.max(0, 1 - Math.abs(scrollDelta) / (viewportHeight * 1.5));
+            const currentScale = baseScale + (progress * 0.08);
+            layer.style.transform = `translate3d(0, ${yOffset}px, 0) scale(${currentScale})`;
+          } else {
+            layer.style.transform = `translate3d(0, ${yOffset}px, 0)`;
+          }
+        }
+      });
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      scrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    });
+
+    // Run initial update on load & Fade preloader
+    window.addEventListener('load', () => {
+      updateParallax();
+      setTimeout(updateParallax, 100);
+      
+      // Smoothly fade out and disable preloader
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('opacity-0');
+        preloader.classList.add('pointer-events-none');
+        setTimeout(() => preloader.remove(), 800); // Fully purge preloader from DOM
+      }
+    });
+
+    // Prevent pinch-zooming gestures on mobile devices
+    document.addEventListener('gesturestart', function (e) {
+      e.preventDefault();
+    });
+  </script>
+</body>
+</html>
