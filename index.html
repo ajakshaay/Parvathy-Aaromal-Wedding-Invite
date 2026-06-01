@@ -415,13 +415,15 @@
       </div>
 
       <!-- Scroll indicator CTA -->
-      <a href="#details" class="group relative px-10 py-3.5 sm:px-12 sm:py-4.5 rounded-full overflow-hidden border border-gold bg-kumkum-dark text-white hover:text-kumkum font-sans font-bold text-xs sm:text-sm uppercase tracking-widest shadow-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-95 z-20 parallax-layer" data-speed="0.05">
-        <span class="absolute inset-[1.5px] bg-kumkum-dark rounded-full group-hover:bg-white transition-all duration-300 z-0"></span>
-        <span class="relative z-10 flex items-center gap-2">
-          View Auspicious details
-          <i data-lucide="chevron-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300"></i>
-        </span>
-      </a>
+      <div class="parallax-layer" data-speed="0.05">
+        <a href="#details" class="group relative px-10 py-3.5 sm:px-12 sm:py-4.5 rounded-full overflow-hidden border border-gold bg-kumkum-dark text-white hover:text-kumkum font-sans font-bold text-xs sm:text-sm uppercase tracking-widest shadow-2xl transition-all duration-500 transform hover:scale-[1.03] active:scale-95 z-20">
+          <span class="absolute inset-[1.5px] bg-kumkum-dark rounded-full group-hover:bg-white transition-all duration-300 z-0"></span>
+          <span class="relative z-10 flex items-center gap-2">
+            View Auspicious details
+            <i data-lucide="chevron-down" class="w-4 h-4 group-hover:translate-y-1 transition-transform duration-300"></i>
+          </span>
+        </a>
+      </div>
     </div>
 
     <!-- Page indicator -->
@@ -434,8 +436,11 @@
   </section>
  
   <!-- ==================== 2. COUPLE PORTRAIT MID SECTION ==================== -->
-  <section id="mid-portrait" class="pt-6 pb-20 sm:pt-10 sm:pb-24 px-4 sm:px-8 relative flex flex-col items-center justify-center border-b border-gold/20">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-light/10 blur-[100px] sm:blur-[130px] pointer-events-none z-0 parallax-layer" data-speed="-0.22"></div>
+  <section id="mid-portrait" class="pt-6 pb-20 sm:pt-10 sm:pb-24 px-4 sm:px-8 relative flex flex-col items-center justify-center border-b border-gold/20 overflow-hidden">
+    <!-- Centered Background Blur Wrapper (Prevents horizontal overflow and preserves parallax alignment) -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+      <div class="w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-gold-light/10 blur-[100px] sm:blur-[130px] parallax-layer" data-speed="-0.22"></div>
+    </div>
 
     <div class="w-full max-w-4xl mx-auto text-center px-2 z-10 reveal">
       
@@ -686,14 +691,16 @@
         </div>
         
         <!-- Center Large Diya -->
-        <div class="relative flex flex-col items-center scale-110 sm:scale-150 transform parallax-layer" data-speed="0.05">
-          <svg class="w-14 h-11 sm:w-18 sm:h-14 text-gold fill-current" viewBox="0 0 60 45">
-            <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
-            <path d="M20 30 L40 30 L36 40 L24 40 Z" opacity="0.9" />
-          </svg>
-          <div class="absolute -top-3 sm:-top-4 w-3.5 h-7 sm:w-4 sm:h-8 animate-pulse pointer-events-none">
-            <path d="M8 0 C8 11, 0 13, 0 20 C0 24, 16 24, 16 20 C16 13, 8 11, 8 0 Z" fill="#FFA500" class="animate-pulse"/>
-            <path d="M8 5 C8 11, 4 12, 4 17 C4 20, 12 20, 12 17 C12 12, 8 11, 8 5 Z" fill="#FDF2A9"/>
+        <div class="parallax-layer" data-speed="0.05">
+          <div class="relative flex flex-col items-center scale-110 sm:scale-150 transform">
+            <svg class="w-14 h-11 sm:w-18 sm:h-14 text-gold fill-current" viewBox="0 0 60 45">
+              <path d="M3 20 C3 37, 57 37, 57 20 L51 20 C51 32, 9 32, 9 20 Z" stroke="#B89025" stroke-width="1"/>
+              <path d="M20 30 L40 30 L36 40 L24 40 Z" opacity="0.9" />
+            </svg>
+            <div class="absolute -top-3 sm:-top-4 w-3.5 h-7 sm:w-4 sm:h-8 animate-pulse pointer-events-none">
+              <path d="M8 0 C8 11, 0 13, 0 20 C0 24, 16 24, 16 20 C16 13, 8 11, 8 0 Z" fill="#FFA500" class="animate-pulse"/>
+              <path d="M8 5 C8 11, 4 12, 4 17 C4 20, 12 20, 12 17 C12 12, 8 11, 8 5 Z" fill="#FDF2A9"/>
+            </div>
           </div>
         </div>
 
